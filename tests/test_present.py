@@ -32,7 +32,7 @@ When we already have a wrapped present and we try to wrap another,
 An message error is received: 'A contents has already been wrapped.'
 """
 
-def test_present_when_the_present_has_already_been_wrapped():
+def test_present_when_a_present_has_already_been_wrapped():
     present = Present()
     present.wrap("salty peanuts")
     with pytest.raises(Exception) as e:
@@ -40,3 +40,18 @@ def test_present_when_the_present_has_already_been_wrapped():
     actual_error_message = str(e.value) 
     expected_error_message = "A contents has already been wrapped."
     assert actual_error_message == expected_error_message
+
+""" 
+When we already have a wrapped present and we try to wrap another,
+The first wrapped message is unchanged.'
+"""
+
+
+def test_wrapping_already_wrapped_preserves_value():
+    present = Present()
+    present.wrap('running shoes')
+    with pytest.raises(Exception) as e:
+        present.wrap("umbrella")
+    actual =present.unwrap()
+    expected = 'running shoes'
+    assert actual == expected
