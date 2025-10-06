@@ -52,6 +52,6 @@ def test_wrapping_already_wrapped_preserves_value():
     present.wrap('running shoes')
     with pytest.raises(Exception) as e:
         present.wrap("umbrella")
-    actual =present.unwrap()
+    actual = present.unwrap()
     expected = 'running shoes'
     assert actual == expected
