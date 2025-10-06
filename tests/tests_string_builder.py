@@ -47,7 +47,7 @@ def test_string_builder_with_multiple_strings():
     assert actual_string == expected_string 
 """
 When we add multiple strings',
-The size is the sizw of all those strings added 
+The size is the size of all those strings added 
 """
 
 def test_string_builder_size_when_multiple_strings_added_successively():
