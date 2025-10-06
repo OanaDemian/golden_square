@@ -50,3 +50,28 @@ def test_counter_float():
     actual = counter.report()
     expected = "Counted to 0 so far."
     assert actual == expected
+
+"""
+When we add multiple numbers to the counter,
+The sum of those numbers is the final count
+"""
+
+def test_counter_adds_multiple_positive_numbers_to_the_count():
+    counter = Counter()
+    counter.add(10)
+    counter.add(120)
+    counter.add(12)
+    counter.add(1)
+    actual = counter.report()
+    expected = "Counted to 143 so far."
+    assert actual == expected
+
+def test_counter_adds_multiple_positive__and_negative_numbers_to_the_count():
+    counter = Counter()
+    counter.add(10)
+    counter.add(120)
+    counter.add(12)
+    counter.add(-1)
+    actual = counter.report()
+    expected = "Counted to 141 so far."
+    assert actual == expected
